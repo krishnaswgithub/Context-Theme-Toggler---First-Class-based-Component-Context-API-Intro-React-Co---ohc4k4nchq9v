@@ -29,8 +29,8 @@ const App = () => {
     <div id="main">
       <ThemeProvider>
         <Page />
+        <ThemeToggleButton />
       </ThemeProvider>
-      <ThemeToggleButton />
     </div>
   );
 };
