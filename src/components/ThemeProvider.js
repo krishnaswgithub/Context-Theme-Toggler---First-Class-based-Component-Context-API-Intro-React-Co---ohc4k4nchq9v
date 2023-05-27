@@ -12,9 +12,9 @@
 
 // export {ThemeProvider,ThemeContext}
 
-import React, { createContext, useState } from 'react';
+import React, { useState } from 'react';
 
-export const ThemeContext = createContext();
+const ThemeContext = React.createContext();
 
 const ThemeProvider = (props) => {
   const [theme, setTheme] = useState('light');
@@ -30,4 +30,4 @@ const ThemeProvider = (props) => {
   );
 };
 
-export default ThemeProvider;
+export { ThemeProvider, ThemeContext };
