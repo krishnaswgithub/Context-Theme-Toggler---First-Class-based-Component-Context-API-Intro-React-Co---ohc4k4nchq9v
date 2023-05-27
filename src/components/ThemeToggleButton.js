@@ -16,15 +16,11 @@ import { ThemeContext } from './ThemeProvider';
 const ThemeToggleButton = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
 
-  const toggleGlobalTheme = () => {
-    toggleTheme();
-  };
-
   return (
     <button
       className={`btn-${theme} txt-${theme} btn`}
       id="global-theme-toggler"
-      onClick={toggleGlobalTheme}
+      onClick={toggleTheme}
     >
       {theme === 'light' ? 'Switch to dark theme' : 'Switch to light theme'}
     </button>
