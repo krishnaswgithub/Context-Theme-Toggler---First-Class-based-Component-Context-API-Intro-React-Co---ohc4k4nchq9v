@@ -1,33 +1,15 @@
-// import React from 'react';
-
-// const ThemeContext = React.createContext()
-// const ThemeProvider = (props) =>{
-
-//     return (
-//         <React.Fragment>
-
-//         </React.Fragment>
-//     )
-// }
-
-// export {ThemeProvider,ThemeContext}
-
 import React, { useState } from 'react';
 
-const ThemeContext = React.createContext();
+const ThemeContext = React.createContext()
+const ThemeProvider = (props) =>{
+    const [theme, setTheme] = useState('light')
+    return (
+        <React.Fragment>
+            <ThemeContext.Provider value={{theme, setTheme}}>
+                {props.children}
+            </ThemeContext.Provider>
+        </React.Fragment>
+    )
+}
 
-const ThemeProvider = (props) => {
-  const [theme, setTheme] = useState('light');
-
-  const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
-  };
-
-  return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      {props.children}
-    </ThemeContext.Provider>
-  );
-};
-
-export { ThemeProvider, ThemeContext };
+export {ThemeProvider,ThemeContext}
